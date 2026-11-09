@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Derek Koch — Economics graduate focused on business analytics, finance operations, and practical process improvement.">
+<title>Derek Koch | Analytics · Finance Operations · Advisory</title>
+<style>
+:root{
+  --navy:#102b46; --navy2:#183e5b; --ink:#203346; --muted:#617386;
+  --teal:#25a6a1; --aqua:#dff3f1; --pale:#f3f7fa; --line:#dce5eb;
+  --white:#fff; --shadow:0 18px 50px rgba(16,43,70,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+.topbar{height:76px;display:flex;align-items:center;border-bottom:1px solid rgba(220,229,235,.85);background:rgba(255,255,255,.94);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-weight:800;letter-spacing:.08em;color:var(--navy);font-size:16px}
+.brand span{color:var(--teal)}
+.navlinks{display:flex;gap:28px;align-items:center;font-size:13px;font-weight:650;color:#526579}
+.navlinks a:hover{color:var(--teal)}
+.nav-cta{background:var(--navy);color:#fff;padding:11px 17px;border-radius:6px;font-size:13px;font-weight:700}
+.hero{background:linear-gradient(115deg,#f5f8fa 0%,#fff 58%,#e9f5f4 100%);padding:72px 0 76px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:64px}
+.eyebrow{font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:#278c8b;font-weight:800;display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";width:27px;height:2px;background:var(--teal)}
+h1{font-size:clamp(44px,6vw,70px);line-height:1.02;letter-spacing:-.055em;color:var(--navy);margin:19px 0 18px;font-weight:760}
+h1 span{color:var(--teal)}
+.hero-copy{font-size:18px;line-height:1.65;color:#526579;max-width:610px;margin:0 0 28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:6px;font-weight:750;font-size:13px;transition:.2s}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 8px 18px rgba(16,43,70,.14)}
+.btn-primary:hover{background:#214b6b;transform:translateY(-1px)}
+.btn-secondary{border:1px solid #c9d6df;color:var(--navy);background:#fff}
+.btn-secondary:hover{border-color:var(--teal);color:#147f7b}
+.hero-meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:32px;color:#607487;font-size:12px}
+.hero-meta span{display:flex;align-items:center;gap:7px}
+.dot{width:6px;height:6px;background:var(--teal);border-radius:50%}
+.portrait-wrap{position:relative;max-width:450px;margin-left:auto}
+.portrait{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 27%;border-radius:12px;box-shadow:var(--shadow);display:block;position:relative;z-index:1}
+.portrait-frame{position:absolute;inset:22px -22px -22px 22px;border:1px solid #8bc9c5;border-radius:12px}
+.portrait-note{position:absolute;z-index:2;left:-32px;bottom:28px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;box-shadow:var(--shadow);font-size:12px;color:#607487}
+.portrait-note strong{display:block;color:var(--navy);font-size:14px;margin-bottom:2px}
+.section{padding:86px 0}
+.section-pale{background:var(--pale)}
+.section-head{max-width:700px;margin-bottom:38px}
+.kicker{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:#278c8b;font-weight:800}
+h2{font-size:clamp(30px,4vw,43px);letter-spacing:-.04em;line-height:1.12;color:var(--navy);margin:10px 0 14px}
+.section-intro{font-size:16px;color:var(--muted);max-width:680px;margin:0}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:start}
+.about-copy p{margin:0 0 17px;color:#53677a;font-size:15px}
+.value-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px;box-shadow:0 8px 26px rgba(16,43,70,.04)}
+.value-card h3{margin:0 0 18px;color:var(--navy);font-size:17px}
+.value-row{display:flex;gap:14px;padding:14px 0;border-top:1px solid #edf1f4}
+.value-icon{flex:0 0 34px;height:34px;border-radius:8px;background:var(--aqua);display:grid;place-items:center;color:#167f7c;font-weight:800}
+.value-row strong{display:block;color:var(--navy);font-size:13px}
+.value-row small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cap{border:1px solid var(--line);border-radius:9px;padding:24px;background:#fff;min-height:205px}
+.cap .num{font-size:11px;color:var(--teal);font-weight:850;letter-spacing:.12em}
+.cap h3{font-size:18px;color:var(--navy);margin:13px 0 8px}
+.cap p{font-size:13px;color:var(--muted);margin:0}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.pill{font-size:11px;padding:7px 10px;border:1px solid #d8e4e9;border-radius:30px;color:#506579;background:#fff}
+.experience{display:grid;grid-template-columns:230px 1fr;gap:40px;padding:30px 0;border-top:1px solid var(--line)}
+.exp-date{font-size:12px;color:#278c8b;font-weight:800;letter-spacing:.04em}
+.exp-place{font-size:12px;color:var(--muted);margin-top:8px}
+.exp-content h3{margin:0;color:var(--navy);font-size:20px}
+.exp-content h4{margin:4px 0 14px;font-size:13px;color:#718294;font-weight:600}
+.exp-content ul{padding-left:18px;margin:0;color:#53677a;font-size:14px}
+.exp-content li{margin:7px 0}
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.project{background:#fff;border:1px solid var(--line);border-radius:10px;padding:27px}
+.project-tag{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#278c8b;font-weight:850}
+.project h3{font-size:19px;line-height:1.3;color:var(--navy);margin:12px 0 10px}
+.project p{font-size:13px;color:var(--muted);margin:0 0 14px}
+.project ul{padding-left:17px;color:#53677a;font-size:13px;margin:0}
+.project li{margin:6px 0}
+.result{display:inline-block;background:var(--aqua);color:#167f7c;font-weight:800;font-size:12px;padding:8px 11px;border-radius:5px;margin-top:14px}
+.education-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.edu-card{padding:25px;border:1px solid var(--line);border-radius:9px;background:#fff}
+.edu-card h3{font-size:18px;color:var(--navy);margin:0 0 5px}
+.edu-card .sub{font-size:13px;color:var(--muted)}
+.edu-card p{font-size:13px;color:#53677a;margin:14px 0 0}
+.contact{background:var(--navy);color:#fff;padding:76px 0}
+.contact-grid{display:flex;justify-content:space-between;align-items:center;gap:35px}
+.contact .kicker{color:#79d2cb}
+.contact h2{color:#fff;max-width:610px}
+.contact p{color:#c3d0da;max-width:600px;margin:0}
+.contact-links{display:flex;flex-direction:column;gap:12px;min-width:240px}
+.contact-links a{border:1px solid rgba(255,255,255,.28);padding:12px 15px;border-radius:6px;font-size:13px;font-weight:700}
+.contact-links a:hover{background:rgba(255,255,255,.1)}
+footer{background:#0b2034;color:#9db0bf;padding:20px 0;font-size:11px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:850px){
+ .hero-grid,.about-grid,.education-grid{grid-template-columns:1fr}
+ .hero-grid{gap:45px}.portrait-wrap{margin:0 auto;width:min(80%,430px)}
+ .cap-grid{grid-template-columns:1fr 1fr}.contact-grid{align-items:flex-start;flex-direction:column}
+ .experience{grid-template-columns:1fr;gap:10px}
+}
+@media(max-width:560px){
+ .wrap{width:min(100% - 32px,1160px)}.topbar{height:64px}.navlinks a:not(.nav-cta){display:none}
+ .hero{padding:52px 0 62px}.hero-copy{font-size:16px}.portrait-note{left:-12px}
+ .section{padding:62px 0}.cap-grid,.project-grid{grid-template-columns:1fr}
+ .contact{padding:60px 0}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#top">DEREK <span>KOCH</span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#capabilities">Capabilities</a><a href="#experience">Experience</a><a href="#projects">Projects</a>
+      <a class="nav-cta" href="#contact">Let's connect</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <div class="eyebrow">Business analytics · Finance operations · Advisory</div>
+   <h1>Turning data into<br><span>better decisions.</span></h1>
+   <p class="hero-copy">I’m Derek Koch, an economics graduate who combines analytical thinking, hands-on financial operations experience, and a practical approach to solving business problems.</p>
+   <div class="hero-actions">
+    <a class="btn btn-primary" href="#contact">Connect with Derek <span>↗</span></a>
+    <a class="btn btn-secondary" href="Derek_Koch_Resume_Analytics_Advisory.pdf" download>View résumé <span>↓</span></a>
+   </div>
+   <div class="hero-meta">
+    <span><i class="dot"></i> Sussex County, New Jersey</span>
+    <span><i class="dot"></i> Open to travel and on-site work</span>
+   </div>
+  </div>
+  <div class="portrait-wrap">
+   <div class="portrait-frame"></div>
+   <img class="portrait" src="assets/derek-koch.jpg" alt="Professional portrait of Derek Koch">
+   <div class="portrait-note"><strong>Curious by nature.</strong>Focused on practical outcomes.</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="about">
+ <div class="wrap">
+  <div class="about-grid">
+   <div class="about-copy">
+    <div class="kicker">A little about me</div>
+    <h2>Analytical by training.<br>Practical by experience.</h2>
+    <p>With a B.A. in Economics from William Paterson University’s Honors College, I bring a foundation in quantitative analysis, research, and business problem-solving.</p>
+    <p>In a high-volume professional practice, I worked across billing, collections, payment reconciliation, and documentation. I also built an Excel estimating tool that automated fee lookups and reduced estimate-revision time by 10–15 minutes per estimate.</p>
+    <p>I enjoy getting into the details, understanding how a process works, identifying where it can improve, and communicating findings clearly. I’m continuing to build my capabilities in Excel, SQL, Power BI, and statistical analysis.</p>
+   </div>
+   <aside class="value-card">
+    <h3>What I bring to a team</h3>
+    <div class="value-row"><div class="value-icon">01</div><div><strong>Structured problem-solving</strong><small>Research, quantitative analysis, and clear documentation.</small></div></div>
+    <div class="value-row"><div class="value-icon">02</div><div><strong>Process improvement</strong><small>Practical automation that reduces manual work and rework.</small></div></div>
+    <div class="value-row"><div class="value-icon">03</div><div><strong>Operational discipline</strong><small>Reconciliation, issue resolution, and compliance-minded execution.</small></div></div>
+    <div class="value-row"><div class="value-icon">04</div><div><strong>Adaptability</strong><small>Comfortable learning new domains and working across teams.</small></div></div>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<section class="section section-pale" id="capabilities">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="kicker">Capabilities</div>
+   <h2>Where analysis meets execution.</h2>
+   <p class="section-intro">A developing toolkit spanning data, finance operations, compliance, and the everyday tools that help teams work smarter.</p>
+  </div>
+  <div class="cap-grid">
+   <article class="cap"><div class="num">01 / DATA</div><h3>Data &amp; Analytics</h3><p>Working with structured data to identify patterns, answer questions, and communicate insights.</p></article>
+   <article class="cap"><div class="num">02 / FINANCE</div><h3>Finance Operations</h3><p>Billing and collections support, payment reconciliation, discrepancy review, and account closeout.</p></article>
+   <article class="cap"><div class="num">03 / PROCESS</div><h3>Process Improvement</h3><p>Building spreadsheet-based tools, streamlining repeatable tasks, and supporting consistent workflows.</p></article>
+   <article class="cap"><div class="num">04 / RISK</div><h3>Risk &amp; Compliance</h3><p>Regulatory research, policy adherence, issue escalation, and careful handling of sensitive records.</p></article>
+   <article class="cap"><div class="num">05 / RESEARCH</div><h3>Research &amp; Modeling</h3><p>Econometric methods, industry analysis, market research, and evidence-based recommendations.</p></article>
+   <article class="cap"><div class="num">06 / COLLABORATION</div><h3>Team Enablement</h3><p>Cross-functional coordination, clear communication, and training teammates on operational procedures.</p></article>
+  </div>
+  <div class="pills" aria-label="Tools and methods">
+   <span class="pill">Advanced Excel</span><span class="pill">SQL Server / Azure SQL</span><span class="pill">Power BI</span><span class="pill">R Studio</span><span class="pill">Python</span><span class="pill">AML Transaction Monitoring</span><span class="pill">PivotTables</span><span class="pill">Regression</span><span class="pill">Difference-in-Differences</span><span class="pill">Azure DevOps</span><span class="pill">Agile / Scrum</span><span class="pill">Microsoft 365</span>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="experience">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="kicker">Professional experience</div>
+   <h2>Experience grounded in real work.</h2>
+   <p class="section-intro">Hands-on responsibility in a client-facing, detail-oriented environment, complemented by experience in fast-paced operations.</p>
+  </div>
+  <article class="experience">
+   <div><div class="exp-date">SEP 2025 — OCT 2026</div><div class="exp-place">Vernon &amp; Sparta, New Jersey</div></div>
+   <div class="exp-content">
+    <h3>Receptionist / Assistant Biller</h3><h4>Alberto and Cho Oral and Maxillofacial Surgery Group, LLC</h4>
+    <ul>
+     <li>Supported billing and collections across a two-office practice, from insurance verification and claim submission through payment posting and closeout.</li>
+     <li>Reconciled payments against billed amounts across five insurance carriers; reviewed EOBs, identified denials and discrepancies, and supported corrective resubmissions.</li>
+     <li>Built an Excel estimating tool using VLOOKUP and IF logic to retrieve carrier fee-schedule rates and recalculate patient estimates automatically.</li>
+     <li>Reduced estimate-revision time by 10–15 minutes per estimate and trained a new receptionist on billing workflows and the tool.</li>
+     <li>Maintained HIPAA and practice-policy requirements when handling protected health information and financial records.</li>
+    </ul>
+   </div>
+  </article>
+  <article class="experience">
+   <div><div class="exp-date">2023 — 2025</div><div class="exp-place">Goshen, New York</div></div>
+   <div class="exp-content">
+    <h3>Park Associate II <span style="font-size:13px;color:#718294;font-weight:600">(promoted from Cashier)</span></h3><h4>LEGOLAND New York</h4>
+    <ul>
+     <li>Promoted to Park Associate Tier 2 and cross-trained across attractions, retail, and park operations.</li>
+     <li>Processed and balanced high-volume cash and card transactions while following operating and safety procedures in a fast-paced, team-based environment.</li>
+    </ul>
+   </div>
+  </article>
+  <p style="font-size:12px;color:#718294;margin-top:6px">Additional experience: Cashier, ShopRite (seasonal) · Cashier, Lowe’s</p>
+ </div>
+</section>
+
+<section class="section section-pale" id="projects">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="kicker">Selected research &amp; projects</div>
+   <h2>Turning questions into evidence.</h2>
+   <p class="section-intro">Hands-on and academic projects that demonstrate analytical rigor, commercial awareness, and the ability to present findings.</p>
+  </div>
+  <div class="project-grid">
+   <article class="project">
+    <div class="project-tag">Independent study · Oct 2026</div>
+    <h3>AML Transaction Monitoring Analysis</h3>
+    <p>Excel · Built to prepare for an AML Data Analyst skills assessment</p>
+    <ul>
+     <li>Built transaction-monitoring checks on sample transaction, customer, and watchlist data.</li>
+     <li>Flagged potential structuring (cash deposits of $9,000–$9,999), CTR-threshold activity, round-dollar amounts, and duplicate transaction IDs using COUNTIFS, SUMIFS, MOD, and nested IF helper columns.</li>
+     <li>Screened customer names against a watchlist and pulled risk ratings across sheets with VLOOKUP and INDEX/MATCH to total high-risk activity.</li>
+     <li>Summarized activity by customer, transaction type, and month with PivotTables and conditional formatting.</li>
+    </ul>
+    <div class="result">Result: passed the AML Data Analyst Excel skills assessment</div>
+   </article>
+   <article class="project">
+    <div class="project-tag">Workplace tool · 2025–2026</div>
+    <h3>Automated Patient Estimating Tool</h3>
+    <p>Excel · Alberto and Cho Oral and Maxillofacial Surgery Group</p>
+    <ul>
+     <li>Built an estimating tool using VLOOKUP and IF logic that pulls rates from carrier fee schedules by procedure code.</li>
+     <li>Recalculates patient estimates automatically instead of by hand.</li>
+     <li>Trained a new receptionist to use the tool as part of billing onboarding.</li>
+    </ul>
+    <div class="result">Result: 10–15 minutes saved per estimate revision</div>
+   </article>
+   <article class="project">
+    <div class="project-tag">Independent study · 2025</div>
+    <h3>2008 Financial Crisis &amp; Household Housing Recovery</h3>
+    <p>William Paterson University · Presented at the New Jersey Big Data Alliance Research Symposium</p>
+    <ul>
+     <li>Analyzed Federal Reserve Survey of Consumer Finances data using R Studio.</li>
+     <li>Applied difference-in-differences, linear regression, and logistic regression to evaluate recovery patterns across income brackets.</li>
+     <li>Presented findings and data visualizations at a statewide research symposium.</li>
+    </ul>
+    <div class="result">Key finding: recovery after 2009 was concentrated among households earning $350K+</div>
+   </article>
+   <article class="project">
+    <div class="project-tag">Honors thesis · 2024–2025</div>
+    <h3>Business Plan for a Wealth Management Firm</h3>
+    <p>William Paterson University · Business Honors</p>
+    <ul>
+     <li>Led industry analysis for a seven-person team, researching market size, competitors, and target clients.</li>
+     <li>Developed research supporting the business plan’s financial projections.</li>
+     <li>Researched federal securities laws and regulatory frameworks; presented and defended recommendations to faculty and industry professionals.</li>
+    </ul>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="education">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">Education &amp; development</div><h2>A foundation for continuous learning.</h2></div>
+  <div class="education-grid">
+   <article class="edu-card">
+    <h3>Bachelor of Arts, Economics (Business Honors)</h3>
+    <div class="sub">William Paterson University · Honors College · May 2025</div>
+    <p><strong>Cum Laude</strong> · GPA 3.46 · Dean’s List (2 semesters) · Honors Scholarship recipient</p>
+    <p>Relevant coursework: Applied Data Analytics; Research-Based Industry Analysis and econometric analysis.</p>
+   </article>
+   <article class="edu-card">
+    <h3>Certifications &amp; professional development</h3>
+    <p>Microsoft Office Specialist: Excel Expert (in progress) · Excel 2019 Associate (2025)</p>
+    <p>IIA Member (2026) · Associate in General Insurance (AINS, in progress)</p>
+    <p>Power BI for Data Analysts coursework (in progress) · SQL Fundamentals · Scrum Fundamentals</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap contact-grid">
+  <div>
+   <div class="kicker">Start a conversation</div>
+   <h2>Let’s talk about the problems your team is working to solve.</h2>
+   <p>Interested in opportunities across business analytics, finance operations, risk and compliance, or advisory. I welcome conversations with established firms and growing businesses alike.</p>
+  </div>
+  <div class="contact-links">
+   <a href="mailto:derek@kochworx.com">✉ &nbsp; derek@kochworx.com</a>
+   <a href="tel:+19738962679">☎ &nbsp; 973-896-2679</a>
+   <a href="https://www.linkedin.com/in/derek-koch-7427161b6" target="_blank" rel="noopener">↗ &nbsp; LinkedIn profile</a>
+   <a href="Derek_Koch_Resume_Analytics_Advisory.pdf" download>↓ &nbsp; Download analytics résumé</a>
+   <a href="Derek_Koch_Resume_Finance_Operations.pdf" download>↓ &nbsp; Download finance résumé</a>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap footer-inner"><span>© 2026 Derek Koch</span><span>Business analytics · Finance operations · Advisory</span></div></footer>
+</body>
+</html>
